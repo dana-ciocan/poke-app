@@ -1,0 +1,26 @@
+.poke-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.pokemon {
+  text-align: center;
+  margin: 0.5em;
+  background-color: white;
+  width: 7.5em;
+  height: 7.5em;
+  border-radius: 0.5em;
+}
+
+.pokemon:hover {
+  background-color: #999999;
+  cursor: pointer;
+}
+
+.pokemon .sprite {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
+}
