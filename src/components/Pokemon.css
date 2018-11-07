@@ -1,17 +1,19 @@
 .poke-list {
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 50%;
+  flex-direction: column;
+  width: 95%;
 }
 
 .pokemon {
   text-align: center;
   margin: 0.5em;
   background-color: white;
-  width: 7.5em;
-  height: 7.5em;
+  width: 100%;
   border-radius: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .pokemon:hover {
@@ -22,5 +24,9 @@
 .pokemon .sprite {
   width: 96px;
   height: 96px;
-  margin: 0 auto;
+}
+
+.pokemon .name {
+  font-size: 200%;
+  margin-left: 1em;
 }
