@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Spinner from './Spinner';
 class Pokemon extends React.Component {
   componentDidMount() {
     this.props.fetchData();
@@ -12,7 +12,7 @@ class Pokemon extends React.Component {
         {pokemon ? (
           pokemon.results.map(curPoke => <div>{curPoke.name}</div>)
         ) : (
-          <div>Loading</div>
+          <Spinner />
         )}
       </>
     );
