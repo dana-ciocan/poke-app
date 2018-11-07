@@ -4,7 +4,7 @@ import * as PrActions from '../state-management/actions';
 
 const mapStateToProps = state => {
   return {
-    pokemonList: state.allPokemon,
+    pokemon: state.allPokemon,
     hasErrored: state.hasErrored,
     isLoading: state.isLoading,
   };
@@ -12,13 +12,14 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchData: condition => dispatch(PrActions.fetchAllPokemonData(condition)),
+    fetchPokemonDetails: pokemon =>
+      dispatch(PrActions.fetchPokemonDetails(pokemon)),
   };
 };
 
-const PokemonList = connect(
+const PokemonDetails = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Pokemon);
 
-export default PokemonList;
+export default PokemonDetails;

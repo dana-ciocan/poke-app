@@ -2,6 +2,7 @@ import React from 'react';
 import Spinner from './Spinner';
 import sprites from './../assets/sprites.png';
 import './Pokemon.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 class Pokemon extends React.Component {
   componentDidMount() {
     this.props.fetchData();
@@ -22,8 +23,10 @@ class Pokemon extends React.Component {
           };
           return (
             <div className="pokemon" key={index}>
-              <div className="sprite" style={pokeSprite} />
-              <div className="name">{this.formatName(curPoke.name)}</div>
+              <Link to={`/${curPoke.name}`} style={{ textDecoration: 'none' }}>
+                <div className="sprite" style={pokeSprite} />
+                <div className="name">{this.formatName(curPoke.name)}</div>
+              </Link>
             </div>
           );
         })}
@@ -31,9 +34,25 @@ class Pokemon extends React.Component {
     );
   }
   render() {
-    const { pokemon } = this.props;
-    return <>{pokemon ? this.generatePokeList(pokemon) : <Spinner />}</>;
+    const { pokemonList } = this.props;
+    console.log(pokemonList);
+    return (
+      <Router>
+        <div className="page">
+          {pokemonList ? this.generatePokeList(pokemonList) : <Spinner />}
+          <Route path="/:id" component={Child} />
+        </div>
+      </Router>
+    );
   }
+}
+
+function Child({ match }) {
+  return (
+    <div>
+      <h3>ID: {match.params.id}</h3>
+    </div>
+  );
 }
 
 export default Pokemon;
