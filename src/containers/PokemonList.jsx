@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
-import Pokemon from '../components/Pokemon';
+import PokemonTile from '../components/PokemonTile';
 import * as PrActions from '../state-management/actions';
 
 const mapStateToProps = state => {
   return {
     pokemonList: state.allPokemon,
-    hasErrored: state.hasErrored,
-    isLoading: state.isLoading,
+    hasErrored: state.allPokemonHasErrored,
+    isLoading: state.allPokemonIsLoading,
   };
 };
 
@@ -19,6 +19,6 @@ const mapDispatchToProps = dispatch => {
 const PokemonList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Pokemon);
+)(PokemonTile);
 
 export default PokemonList;

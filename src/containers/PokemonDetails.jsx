@@ -4,16 +4,19 @@ import * as PrActions from '../state-management/actions';
 
 const mapStateToProps = state => {
   return {
-    pokemon: state.allPokemon,
-    hasErrored: state.hasErrored,
-    isLoading: state.isLoading,
+    pokemon: state.pokemonDetails,
+    hasErrored: state.pokemonDetailsHasErrored,
+    isLoading: state.pokemonDetailsIsLoading,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, props) => {
+  const { match } = props;
+  console.log(match);
+  console.log(match.params.id);
   return {
-    fetchPokemonDetails: pokemon =>
-      dispatch(PrActions.fetchPokemonDetails(pokemon)),
+    fetchPokemonDetails: () =>
+      dispatch(PrActions.fetchPokemonDetailsData(match.params.id)),
   };
 };
 
