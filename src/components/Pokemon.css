@@ -5,6 +5,7 @@
     flex-direction: column;
     width: 100%;
   }
+
   .pokemon {
     text-align: center;
     margin: 0.5em;
@@ -15,6 +16,7 @@
     flex-direction: row;
     align-items: center;
   }
+
   .pokemon:hover {
     background-color: #999999;
     cursor: pointer;
@@ -66,5 +68,45 @@
     font-size: 150%;
     margin-left: 1em;
     margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .poke-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: left;
+    margin-left: 0.5em;
+  }
+
+  .pokemon {
+    text-align: center;
+    margin: 0.5em;
+    background-color: white;
+    border-radius: 0.5em;
+    width: 22%;
+    height: 9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pokemon:hover {
+    background-color: #999999;
+    cursor: pointer;
+  }
+
+  .pokemon .sprite {
+    width: 96px;
+    height: 96px;
+  }
+
+  .pokemon .name {
+    font-size: 100%;
+    margin-left: 1em;
+    margin: 0 auto 1em auto;
   }
 }
