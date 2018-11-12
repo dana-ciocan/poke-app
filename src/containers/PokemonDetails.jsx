@@ -12,8 +12,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, props) => {
   const { match } = props;
-  console.log(match);
-  console.log(match.params.id);
   return {
     fetchPokemonDetails: () =>
       dispatch(PrActions.fetchPokemonDetailsData(match.params.id)),
