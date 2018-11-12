@@ -4,14 +4,11 @@ import sprites from './../assets/sprites.png';
 import './PokemonTile.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import PokemonDetails from './../containers/PokemonDetails';
+import { formatName } from './../utilities/formatting';
+
 class PokemonTile extends React.Component {
   componentDidMount() {
     this.props.fetchData();
-  }
-  formatName(pokemonName) {
-    return `${pokemonName.substring(0, 1).toUpperCase()}${pokemonName.substring(
-      1
-    )}`;
   }
   generatePokeList(pokemon) {
     return (
@@ -29,7 +26,7 @@ class PokemonTile extends React.Component {
             <div className="pokemon" key={index}>
               <Link to={`/${pokeId}`} style={{ textDecoration: 'none' }}>
                 <div className="sprite" style={pokeSprite} />
-                <div className="name">{this.formatName(curPoke.name)}</div>
+                <div className="name">{formatName(curPoke.name)}</div>
               </Link>
             </div>
           );

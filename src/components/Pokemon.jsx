@@ -1,18 +1,14 @@
 import React from 'react';
 import Spinner from './Spinner';
+import { formatName } from './../utilities/formatting';
 class Pokemon extends React.Component {
   componentDidMount() {
     const { pokemon } = this.props;
     this.props.fetchPokemonDetails(pokemon);
   }
-  formatName(pokemonName) {
-    return `${pokemonName.substring(0, 1).toUpperCase()}${pokemonName.substring(
-      1
-    )}`;
-  }
   render() {
     const { pokemon } = this.props;
-    return <>{pokemon ? <div>{pokemon.name}</div> : <Spinner />}</>;
+    return <>{pokemon ? <div>{formatName(pokemon.name)}</div> : <Spinner />}</>;
   }
 }
 
