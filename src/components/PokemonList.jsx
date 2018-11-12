@@ -1,12 +1,12 @@
 import React from 'react';
 import Spinner from './Spinner';
 import sprites from './../assets/sprites.png';
-import './PokemonTile.css';
+import './PokemonList.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import PokemonDetails from './../containers/PokemonDetails';
-import { formatName } from './../utilities/formatting';
+import PokemonDetails from '../containers/PokemonDetails';
+import { formatName } from '../utilities/formatting';
 
-class PokemonTile extends React.Component {
+class PokemonList extends React.Component {
   componentDidMount() {
     this.props.fetchData();
   }
@@ -47,4 +47,4 @@ class PokemonTile extends React.Component {
   }
 }
 
-export default PokemonTile;
+export default PokemonList;

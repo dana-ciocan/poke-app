@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import PokemonTile from '../components/PokemonTile';
+import PokemonList from '../components/PokemonList';
 import * as PrActions from '../state-management/actions';
 
 const mapStateToProps = state => {
@@ -19,6 +19,6 @@ const mapDispatchToProps = dispatch => {
 const PokemonListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(PokemonTile);
+)(PokemonList);
 
 export default PokemonListContainer;
