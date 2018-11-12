@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PokemonList from './containers/PokemonList';
+import PokemonListContainer from './containers/PokemonListContainer';
 import './App.css';
 
 class App extends Component {
@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Pok&eacute;mon</h1>
-        <PokemonList />
+        <PokemonListContainer />
       </div>
     );
   }

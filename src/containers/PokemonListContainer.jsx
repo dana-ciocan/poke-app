@@ -16,9 +16,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const PokemonList = connect(
+const PokemonListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(PokemonTile);
 
-export default PokemonList;
+export default PokemonListContainer;
