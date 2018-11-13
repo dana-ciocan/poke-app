@@ -5,6 +5,7 @@
       "error",
       { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }
     ],
+    "class-methods-use-this": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
