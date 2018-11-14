@@ -33,19 +33,22 @@ export function fetchAllPokemonDataSuccess(allPokemon) {
 }
 
 export function fetchAllPokemonData() {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(allPokemonIsLoading(true));
     fetch('http://pokeapi.salestock.net/api/v2/pokemon/')
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-        dispatch(allPokemonIsLoading(false));
         return response;
       })
       .then(response => response.json())
       .then(allPokemon => dispatch(fetchAllPokemonDataSuccess(allPokemon)))
-      .catch(err => {
+      .then((pokeResults) => {
+        dispatch(allPokemonIsLoading(false));
+        return pokeResults;
+      })
+      .catch((err) => {
         console.log(`There appears to be a problem: ${err}`);
         dispatch(allPokemonHasErrored(true));
       });
@@ -74,10 +77,10 @@ export function fetchPokemonDetailsDataSuccess(allPokemon) {
 }
 
 export function fetchPokemonDetailsData(pokemon) {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(pokemonDetailsIsLoading(true));
     fetch(`http://pokeapi.salestock.net/api/v2/pokemon/${pokemon}`)
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw Error(response.statusText);
         }
@@ -86,7 +89,7 @@ export function fetchPokemonDetailsData(pokemon) {
       })
       .then(response => response.json())
       .then(allPokemon => dispatch(fetchPokemonDetailsDataSuccess(allPokemon)))
-      .catch(err => {
+      .catch((err) => {
         console.log(`There appears to be a problem: ${err}`);
         dispatch(pokemonDetailsHasErrored(true));
       });

@@ -1,5 +1,5 @@
-import { ActionTypes } from './actions.js';
 import { combineReducers } from 'redux';
+import { ActionTypes } from './actions';
 
 export function allPokemonHasErrored(state = false, action) {
   switch (action.type) {
@@ -11,7 +11,7 @@ export function allPokemonHasErrored(state = false, action) {
   }
 }
 
-export function allPokemonIsLoading(state = false, action) {
+export function allPokemonIsLoading(state = true, action) {
   switch (action.type) {
     case ActionTypes.ALL_POKEMON_IS_LOADING:
       return action.payload.isLoading;
