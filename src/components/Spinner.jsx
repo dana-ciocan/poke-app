@@ -3,7 +3,6 @@ import './Spinner.css';
 import PropTypes from 'prop-types';
 
 const Spinner = ({ colour, size }) => {
-  console.log(colour);
   let borderWidth;
   let spinnerSize;
   switch (size) {
