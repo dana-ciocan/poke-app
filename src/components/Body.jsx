@@ -6,22 +6,7 @@ import * as PrActions from '../state-management/actions';
 import Spinner from './Spinner';
 import './Body.css';
 import PokemonDetails from './PokemonDetails';
-import PokemonCard from './PokemonCard';
-
-const PokeList = ({ monsterList }) => (
-  <div className="poke-list">
-    {monsterList.results.map((curPoke, index) => (
-      <PokemonCard monster={curPoke} key={curPoke.name} index={index} />
-    ))}
-  </div>
-);
-
-PokeList.propTypes = {
-  monsterList: PropTypes.shape(),
-};
-PokeList.defaultProps = {
-  monsterList: null,
-};
+import Menu from './Menu';
 
 class Body extends React.Component {
   componentDidMount() {
@@ -35,7 +20,7 @@ class Body extends React.Component {
     return (
       <Router>
         <div className="page">
-          {isLoading || pokemonList === null ? <Spinner /> : <PokeList monsterList={pokemonList} />}
+          {isLoading || pokemonList === null ? <Spinner /> : <Menu pokemonList={pokemonList} />}
           <Route path="/:id" component={PokemonDetails} />
         </div>
       </Router>
