@@ -35,7 +35,9 @@ export function fetchAllPokemonDataSuccess(allPokemon) {
 export function fetchAllPokemonData() {
   return (dispatch) => {
     dispatch(allPokemonIsLoading(true));
-    fetch('http://pokeapi.salestock.net/api/v2/pokemon/')
+    fetch('http://pokeapi.salestock.net/api/v2/pokemon/', {
+      cache: 'force-cache',
+    })
       .then((response) => {
         if (!response.ok) {
           throw Error(response.statusText);
@@ -79,7 +81,9 @@ export function fetchPokemonDetailsDataSuccess(allPokemon) {
 export function fetchPokemonDetailsData(pokemon) {
   return (dispatch) => {
     dispatch(pokemonDetailsIsLoading(true));
-    fetch(`http://pokeapi.salestock.net/api/v2/pokemon/${pokemon}`)
+    fetch(`http://pokeapi.salestock.net/api/v2/pokemon/${pokemon}/`, {
+      cache: 'force-cache',
+    })
       .then((response) => {
         if (!response.ok) {
           throw Error(response.statusText);
