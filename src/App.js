@@ -1,10 +1,11 @@
 import React from 'react';
 import PokemonList from './components/PokemonList';
 import './App.css';
+import Header from './components/Header';
 
 const App = () => (
   <div className="App">
-    <h1>Pok&eacute;mon</h1>
+    <Header />
     <PokemonList />
   </div>
 );
