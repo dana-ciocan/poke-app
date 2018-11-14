@@ -44,9 +44,9 @@ export function fetchAllPokemonData() {
       })
       .then(response => response.json())
       .then(allPokemon => dispatch(fetchAllPokemonDataSuccess(allPokemon)))
-      .then((pokeResults) => {
+      .then((allPokemon) => {
         dispatch(allPokemonIsLoading(false));
-        return pokeResults;
+        return allPokemon;
       })
       .catch((err) => {
         console.log(`There appears to be a problem: ${err}`);
@@ -84,11 +84,14 @@ export function fetchPokemonDetailsData(pokemon) {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-        dispatch(pokemonDetailsIsLoading(false));
         return response;
       })
       .then(response => response.json())
-      .then(allPokemon => dispatch(fetchPokemonDetailsDataSuccess(allPokemon)))
+      .then(pokemonDetails => dispatch(fetchPokemonDetailsDataSuccess(pokemonDetails)))
+      .then((pokemonDetails) => {
+        dispatch(pokemonDetailsIsLoading(false));
+        return pokemonDetails;
+      })
       .catch((err) => {
         console.log(`There appears to be a problem: ${err}`);
         dispatch(pokemonDetailsHasErrored(true));
