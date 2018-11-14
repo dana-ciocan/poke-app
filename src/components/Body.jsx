@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import * as PrActions from '../state-management/actions';
 import Spinner from './Spinner';
 import './Body.css';
-import Pokemon from './Pokemon';
+import PokemonDetails from './PokemonDetails';
 import PokemonCard from './PokemonCard';
 
 const PokeList = ({ monsterList }) => (
@@ -36,7 +36,7 @@ class Body extends React.Component {
       <Router>
         <div className="page">
           {isLoading || pokemonList === null ? <Spinner /> : <PokeList monsterList={pokemonList} />}
-          <Route path="/:id" component={Pokemon} />
+          <Route path="/:id" component={PokemonDetails} />
         </div>
       </Router>
     );
