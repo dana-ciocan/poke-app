@@ -5,32 +5,6 @@
     flex-direction: column;
     width: 100%;
   }
-
-  .pokemon {
-    text-align: center;
-    margin: 0.5em;
-    background-color: white;
-    width: 100%;
-    border-radius: 0.5em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .pokemon:hover {
-    background-color: #999999;
-    cursor: pointer;
-  }
-
-  .pokemon .sprite {
-    width: 96px;
-    height: 96px;
-  }
-
-  .pokemon .name {
-    font-size: 200%;
-    margin-left: 1em;
-  }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -40,34 +14,6 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-  }
-
-  .pokemon {
-    text-align: center;
-    margin: 0.5em;
-    background-color: white;
-    border-radius: 0.5em;
-    width: 20%;
-    height: 10em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pokemon:hover {
-    background-color: #999999;
-    cursor: pointer;
-  }
-
-  .pokemon .sprite {
-    width: 96px;
-    height: 96px;
-  }
-
-  .pokemon .name {
-    font-size: 150%;
-    margin-left: 1em;
-    margin: 0 auto;
   }
 }
 
@@ -88,35 +34,5 @@
     width: 50%;
     justify-content: left;
     margin-left: 0.5em;
-  }
-
-  .pokemon {
-    text-align: center;
-    margin: 0.5em;
-    background-color: white;
-    border-radius: 0.5em;
-    width: 22%;
-    height: 9em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .pokemon:hover {
-    background-color: #999999;
-    cursor: pointer;
-  }
-
-  .pokemon .sprite {
-    width: 96px;
-    height: 96px;
-  }
-
-  .pokemon .name {
-    font-size: 100%;
-    margin-left: 1em;
-    margin: 0 auto 1em auto;
-    color: black;
   }
 }
