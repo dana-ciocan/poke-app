@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { formatName } from '../utilities/formatting';
-import Spinner from './Spinner';
+import DelayedSpinner from './DelayedSpinner';
 import * as PrActions from '../state-management/actions';
 import './PokemonDetails.css';
 
@@ -39,7 +39,7 @@ class PokemonDetails extends React.Component {
 
     return (
       <div className="pokemon-container">
-        {isLoading || pokemon === null ? <Spinner /> : <div>{formatName(pokemon.name)}</div>}
+        {isLoading || pokemon === null ? <DelayedSpinner /> : <div>{formatName(pokemon.name)}</div>}
       </div>
     );
   }

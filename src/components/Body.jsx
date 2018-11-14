@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as PrActions from '../state-management/actions';
-import Spinner from './Spinner';
+import DelayedSpinner from './DelayedSpinner';
 import './Body.css';
 import PokemonDetails from './PokemonDetails';
 import Menu from './Menu';
@@ -20,7 +20,11 @@ class Body extends React.Component {
     return (
       <Router>
         <div className="page">
-          {isLoading || pokemonList === null ? <Spinner /> : <Menu pokemonList={pokemonList} />}
+          {isLoading || pokemonList === null ? (
+            <DelayedSpinner />
+          ) : (
+            <Menu pokemonList={pokemonList} />
+          )}
           <Route path="/:id" component={PokemonDetails} />
         </div>
       </Router>
