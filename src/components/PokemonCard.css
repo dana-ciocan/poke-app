@@ -60,9 +60,9 @@
   .pokemon-card {
     text-align: center;
     margin: 0.5em;
+    padding: 0.2em 1em;
     background-color: white;
     border-radius: 0.5em;
-    width: 22%;
     height: 9em;
     display: flex;
     flex-direction: column;

@@ -14,12 +14,12 @@ const PokemonCard = ({ monster, index }) => {
   let pokeId = monster.url.split('/');
   pokeId = pokeId[pokeId.length - 2];
   return (
-    <div className="pokemon-card" key={pokeId}>
-      <Link to={`/${pokeId}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/${pokeId}`} style={{ textDecoration: 'none' }}>
+      <div className="pokemon-card" key={pokeId}>
         <div className="sprite" style={pokeSprite} />
         <div className="name">{formatName(monster.name)}</div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 
